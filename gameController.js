@@ -11,14 +11,22 @@ const GameController = () => {
 
     console.log("GAME START!!!");
 
-    currentPlayer = player1;
+    let currentPlayer = player1;
 
     const playMove = (index) => {
+            console.log(currentPlayer);
 
         if(GameBoard.getBoard()[index] !== "") return;
 
         GameBoard.updateBoard(index,currentPlayer.marker)
 
+        console.log(GameBoard.getBoard());
+
+        const isBoardFull = GameBoard.getBoard().every(cell => cell !== "");
+
+        if(isBoardFull) {
+            console.log("The game has finished!")
+        }
 
         if(currentPlayer === player1) {
             currentPlayer = player2;
@@ -26,8 +34,20 @@ const GameController = () => {
             currentPlayer = player1
         }
     } 
-
+return{
+    playMove
+}
 
 }
 
-GameController();
+const controller = GameController();
+
+controller.playMove(0)
+controller.playMove(1)
+controller.playMove(2)
+controller.playMove(3)
+controller.playMove(4)
+controller.playMove(5)
+controller.playMove(6)
+controller.playMove(7)
+controller.playMove(8)
