@@ -14,6 +14,8 @@ const GameController = () => {
     let currentPlayer = player1;
 
     const playMove = (index) => {
+
+            
             console.log(currentPlayer);
 
         if(GameBoard.getBoard()[index] !== "") return;
@@ -22,10 +24,32 @@ const GameController = () => {
 
         console.log(GameBoard.getBoard());
 
+        //checking for the win
+        const winningCombinations = [
+            [0,1,2],
+            [3,4,5],
+            [6,7,8],
+            [0,3,6],
+            [1,4,7],
+            [2,5,8],
+            [0,4,8],
+            [2,4,6]
+        ]
+
+        const board = GameBoard.getBoard(); 
+        for (const [a, b, c] of winningCombinations) {
+        if (board[a] === board[b] && board[b] === board[c] && board[a] !== "") {
+        console.log(currentPlayer)
+        console.log("wins")
+        return;
+  }
+}
+
+
         const isBoardFull = GameBoard.getBoard().every(cell => cell !== "");
 
         if(isBoardFull) {
-            console.log("The game has finished!")
+            console.log("It's a draw")
         }
 
         if(currentPlayer === player1) {
@@ -43,11 +67,7 @@ return{
 const controller = GameController();
 
 controller.playMove(0)
-controller.playMove(1)
-controller.playMove(2)
-controller.playMove(3)
-controller.playMove(4)
 controller.playMove(5)
-controller.playMove(6)
+controller.playMove(1)
 controller.playMove(7)
-controller.playMove(8)
+controller.playMove(2)
