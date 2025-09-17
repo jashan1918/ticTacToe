@@ -5,3 +5,5 @@ function player (name, marker) {
         marker
     }
 }
+
+export default player;
