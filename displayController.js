@@ -1,15 +1,27 @@
+
 const displayController = () => {
 
 console.log("the display controller is working!!")
 
 const cells = document.querySelectorAll(".cell");
 
-cells.forEach((cell) => {
-    cell.addEventListener("click", () => {
-        const index = parseInt(e.target.dataset.index)
-        
-    })
-})
+
+
+function updateCell (index, marker) {
+
+    const cell = document.querySelector(`[data-index="${index}"]`);
+    cell.textContent = marker
+}   
+
+// function updateStatus(message) {
+//   document.querySelector("#status").textContent = message;
+// }
+
+
+    return{
+        updateCell
+    }
+ 
 }
 
 export default displayController;
