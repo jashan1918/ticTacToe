@@ -21,7 +21,13 @@ document.addEventListener("DOMContentLoaded", () => {
       // Optional: handle win/draw message
       if (result?.success) {
         // maybe show a message like:
-        // document.querySelector("#status").textContent = `${result.marker} played`;
+        document.querySelector("#status").textContent = `${result.marker} played`;
+        if(result.draw){
+        document.querySelector("#result").textContent = "match is a draw!"
+        }
+        if(result?.winner) {
+            document.querySelector("#result").textContent = `${result.winner} Wins`
+        }
       }
     });
   });

@@ -50,7 +50,7 @@ console.log("GAME CONTROLLER INIT"); // Put at the top
         gameOver = true;
         return {
           success: true,
-          winner: currentPlayer,
+          winner: currentPlayer.name,
           index,
           marker: currentPlayer.marker,
         };
@@ -70,6 +70,7 @@ console.log("GAME CONTROLLER INIT"); // Put at the top
    const marker = currentPlayer.marker
    console.log(currentPlayer);
     currentPlayer = currentPlayer === player1 ? player2 : player1;
+
     console.log(currentPlayer);
 
     return { success: true, index, marker };
