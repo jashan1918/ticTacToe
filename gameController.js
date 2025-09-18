@@ -6,8 +6,8 @@ const GameController = () => {
 console.log("GAME CONTROLLER INIT"); // Put at the top
 
 
-  const player1 = player("jashan", "X");
-  const player2 = player("duck", "O");
+  const player1 = player("Haku", "X");
+  const player2 = player("Paizuri-chan", "O");
 
   console.log(player1);
   console.log(player2);

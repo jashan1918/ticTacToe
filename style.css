@@ -6,6 +6,8 @@ html, body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    font-family: "Roboto", sans-serif;
 }
 
 #gameBoard {
@@ -20,6 +22,12 @@ html, body{
 
 .cell {
     background-color: pink;
+    color: white;
+    font-size: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
 }
 
 #status {
@@ -35,4 +43,5 @@ html, body{
   font-weight: bold;
   text-align: center;
 }
+
 

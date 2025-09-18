@@ -1,22 +1,16 @@
 const GameBoard = (() => {
+  const board = ["", "", "", "", "", "", "", "", ""];
 
-        const board = ["", "", "", "", "", "", "", "", ""] 
-        
-        function updateBoard(index, marker){
-        board[index] = marker;
+  function updateBoard(index, marker) {
+    board[index] = marker;
+  }
 
-}
+  const getBoard = () => board;
 
-
-        const getBoard = () => board;
-
-        return{
-            updateBoard,
-            getBoard
-        }
+  return {
+    updateBoard,
+    getBoard,
+  };
 })();
-
-
-
 
 export default GameBoard;
